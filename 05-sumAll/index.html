@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum All</title>
+</head>
+<body>
+    <script>
+        function sumAll(min, max){
+            if (min > max) [min, max] = [max, min];
+            if (min < 0 || max < 0) return "ERROR";
+            if (!Number.isInteger(min) || !Number.isInteger(max)) return "ERROR";
+            if (typeof min != "number" || typeof max != "number") return "ERROR";
+            let sum = 0;
+            for (let i = min; i <= max; i++){
+                sum += i;
+            }
+            return sum;
+        }
+
+        console.log(sumAll(123,1));
+    </script>
+</body>
+</html>

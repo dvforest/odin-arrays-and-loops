@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove from Array</title>
+</head>
+<body>
+    <script>
+        function removeFromArray(array, number) { //only works with one argument
+            if (array.includes(number)) {
+                const numberPosition = array.indexOf(number);
+                array.splice(numberPosition, 1);
+                return array;
+            }
+        };
+
+        function removeFromArraySolution(array, ...args) { //works with infinite arguments
+            const newArray = [];
+
+            array.forEach((item) => {
+                if (!args.includes(item)){
+                    newArray.push(item);
+                }
+            });
+            return newArray;
+        }
+
+        function removeFromArrayAdvanced(array, ...args) { // simpled, but more advanced method
+            return array.filter(val => !args.includes(val));
+        }
+
+        console.log(removeFromArrayAdvanced([1, 2, 3, 4, 5, 3, 4, 4, 5, 6, 3, 7], 3, 4));
+    </script>
+</body>
+</html>
